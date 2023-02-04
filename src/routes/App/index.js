@@ -12,14 +12,16 @@ import '../../components/styles/global.css'
 function App() {
   return (
     <BrowserRouter>
-    <Routes>
-  
-        <Route exact path='/' element={<Home />}/>
-        <Route exact path='/login-user' element={<Login />}/>
-        <Route exact path='/recovery-password' element={<RecoveryPassword />}/>
-        <Route element={<NotFount />}/>
+    <Layout>
+      <Routes>
+          
+          <Route exact path='/' element={<Home />}/>
+          <Route exact path='/login-user' element={<Login />}/>
+          <Route exact path='/recovery-password' element={<RecoveryPassword />}/>
+          <Route element={<NotFount />}/>
 
-    </Routes>
+      </Routes>
+    </Layout>
     </BrowserRouter>
     
   )

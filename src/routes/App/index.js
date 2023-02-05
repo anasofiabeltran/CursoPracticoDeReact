@@ -1,8 +1,8 @@
 import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import { Layout } from '../../containers/Layout'
-import { Login } from '../../containers/Login'
-import {RecoveryPassword} from '../../containers/RecoveryPassword'
+import { Layout } from '../../Organisms/Layout'
+import { Login } from '../../Organisms/Login'
+import {RecoveryPassword} from '../../Organisms/RecoveryPassword'
 import { Home } from '../../pages/Home';
 import { NotFount } from '../../pages/NotFound';
 

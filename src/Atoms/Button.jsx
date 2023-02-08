@@ -1,10 +1,8 @@
 import React from 'react'
 
-function Button({children}) {
+function Button({button}) {
   return (
-    <button>
-      {children}
-    </button>
+    <input  defaultValue={button} className="primary-button login-button" />
   )
 }
 

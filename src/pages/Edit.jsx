@@ -13,6 +13,7 @@ function Edit() {
         <Input id="Name" labelText="Name" textPlaceHolder="Camila Yokoa" />
         <Input id="email" labelText="Email" textPlaceHolder="platzi@example.com" />
         <Input id="password" labelText="Password" textPlaceHolder="*********" />
+        <Button button="Edit"/>
       </Form>
     </div>
   )

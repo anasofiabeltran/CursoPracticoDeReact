@@ -6,7 +6,7 @@ import Edit from '../../pages/Edit'
 import {RecoveryPassword} from '../../Organisms/RecoveryPassword'
 import { Home } from '../../pages/Home';
 import { NotFount } from '../../pages/NotFound';
-
+import { Create } from '../../pages/Create';
 
 import '../../components/styles/global.css'
 
@@ -19,6 +19,7 @@ function App() {
           <Route exact path='/' element={<Home />}/>
           <Route exact path='/login-user' element={<Login />}/>
           <Route exact path='/Edit-user' element={<Edit />}/>
+          <Route exact path='/Sign-in' element={<Create />}/>
           <Route exact path='/recovery-password' element={<RecoveryPassword />}/>
           <Route element={<NotFount />}/>
 

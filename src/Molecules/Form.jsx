@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-function Form({formName,tittle,children}) {
+function Form({formName,tittle,button,children}) {
   return (
     <div className="login">
             <div className="form-container">
@@ -9,9 +9,8 @@ function Form({formName,tittle,children}) {
                 <form action="/" className="form">
                 <div>
                     {children}
-                    
                 </div>
-                <input type="submit" defaultValue={formName} className="primary-button login-button" />
+                
                 </form>
             </div>
     </div>

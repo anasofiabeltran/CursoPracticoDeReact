@@ -7,19 +7,18 @@ import Button from '../Atoms/Button'
 
 import '../components/styles/Login.scss'
 
-function Login() {
+function Create() {
   return (
     <div>
       <Header />
-      < Form formName="Login" tittle="My account" button="Log in"> 
+      < Form formName="Create" tittle="My account" button="Log in"> 
+        <Input id="Name" labelText="Name" textPlaceHolder="Camila Yokoa" />
         <Input id="email" labelText="Email address" textPlaceHolder="platzi@example.com" />
         <Input id="password" labelText="Password" textPlaceHolder="*********" />
-        <Button button="Log in"/>
-        <a href="/">Forgot my password</a>
-        <Button button="Sign Up"/>
+        <Button button="Create"/>
       </Form>
     </div>
   )
 }
 
-export  {Login}
+export  {Create}

@@ -1,12 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import {Links} from '../Atoms/Links.jsx'
+import { Link } from "react-router-dom";
 
 import logo from '../Assets/Icons/logo_yard_sale.png'
 import icon_shopping_cart from '../Assets/Icons/icon_shopping_cart_notification.png'
 import '../components/styles/header.scss'
+import {GlobalContext,UseContext} from '../components/GlobalContext' 
 
 function Header() {
+  
+  const[infoUser, setInfoUser]= useState(<button><Link to="/Sign-in">Sign in</Link></button>)
+  const[login, setLogin] = useState(<button><Link to="/login-user">login</Link></button>)
+  
+  const {user,
+    setUser,} = UseContext();
+
+  useEffect(()=>{
+    if(!(user=='')){
+      setLogin('')
+      setInfoUser(user)
+    }
+  },[])
   return (
  <nav>
   <img src="./icons/icon_menu.svg" alt="menu" className="menu" />
@@ -35,7 +50,8 @@ function Header() {
   </div>
   <div className="navbar-right">
     <ul>
-      <li className="navbar-email">platzi@example.com</li>
+      <li className="navbar-email">{login}</li>
+      <li className="navbar-email">{infoUser}</li>
       <li className="navbar-shopping-cart">
         <img src={icon_shopping_cart} alt="shopping cart" />
         <div>2</div>

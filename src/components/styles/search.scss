@@ -1,0 +1,18 @@
+.SearchInput{
+    display: flex;
+    width: 22vw;
+    margin: 2rem 7.5rem;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background: #F7F7F7;
+    gap: 8px;
+}
+
+.SearchInput input{
+    background: transparent;
+    border: none;
+}
+
+.SearchInput img{
+    height: 22px;
+}

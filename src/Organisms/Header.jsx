@@ -7,6 +7,9 @@ import logo from '../Assets/Icons/logo_yard_sale.png'
 import icon_shopping_cart from '../Assets/Icons/icon_shopping_cart_notification.png'
 import '../components/styles/header.scss'
 import {GlobalContext,UseContext} from '../components/GlobalContext' 
+import { Menu } from '../Molecules/Menu.jsx';
+
+import path from '../Assets/Icons/Path.png'
 
 function Header() {
   
@@ -19,7 +22,7 @@ function Header() {
   useEffect(()=>{
     if(!(user=='')){
       setLogin('')
-      setInfoUser(user)
+      setInfoUser(<button className='UserMenu'><div> {user} <img src={path}/></div> <Menu /></button>)
     }
   },[])
   return (

@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { Link } from "react-router-dom";
+
+import Button from '../Atoms/Button'
+import {Header} from '../Organisms/Header'
 
 import '../components/styles/RecoveryPassword.scss'
 
 function RecoveryPassword() {
   return (
+    <>
+    <Header />
     <div className="login">
         <div className="form-container">
             <img src="./logos/logo_yard_sale.svg" alt="logo" className="logo" />
@@ -12,13 +18,14 @@ function RecoveryPassword() {
             <div className="email-image">
             <img src="./icons/email.svg" alt="email" />
             </div>
-            <button className="primary-button login-button">Login</button>
+            <Button button="Login" navigateto="/login-user"/>
             <p className="resend">
             <span>Didn't receive the email?</span>
-            <a href="/">Resend</a>
+            <Link to="/recovery" >Resend</Link>
             </p>
         </div>
     </div>
+    </>
 
   )
 }

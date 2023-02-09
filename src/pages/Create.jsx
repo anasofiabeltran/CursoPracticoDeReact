@@ -15,7 +15,7 @@ function Create() {
         <Input id="Name" labelText="Name" textPlaceHolder="Camila Yokoa" />
         <Input id="email" labelText="Email address" textPlaceHolder="platzi@example.com" />
         <Input id="password" labelText="Password" textPlaceHolder="*********" />
-        <Button button="Create"/>
+        <Button button="Create" navigateto="/"/>
       </Form>
     </div>
   )

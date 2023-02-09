@@ -17,14 +17,19 @@ function Header() {
   const[login, setLogin] = useState(<button><Link to="/login-user">login</Link></button>)
   
   const {user,
-    setUser,} = UseContext();
+    setUser,
+    openMenuUser,
+    setOpenMenuUser,} = UseContext();
 
+  const OpenMenuUser = () =>{
+    setOpenMenuUser(!openMenuUser)
+  }
   useEffect(()=>{
     if(!(user=='')){
       setLogin('')
-      setInfoUser(<button className='UserMenu'><div> {user} <img src={path}/></div> <Menu /></button>)
+      setInfoUser(<button className={`UserMenu ${openMenuUser && `UserMenuOpen`}`} ><button onClick={OpenMenuUser}> <div> {user} <img src={path}/> </div></button> {openMenuUser && (<Menu />)}</button>)
     }
-  },[])
+  },[openMenuUser])
   return (
  <nav>
   <img src="./icons/icon_menu.svg" alt="menu" className="menu" />

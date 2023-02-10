@@ -8,6 +8,7 @@ import icon_shopping_cart from '../Assets/Icons/icon_shopping_cart_notification.
 import '../components/styles/header.scss'
 import {GlobalContext,UseContext} from '../components/GlobalContext' 
 import { Menu } from '../Molecules/Menu.jsx';
+import { ShoppingCart } from '../pages/ShoppingCart.jsx';
 
 import path from '../Assets/Icons/Path.png'
 
@@ -19,7 +20,9 @@ function Header() {
   const {user,
     setUser,
     openMenuUser,
-    setOpenMenuUser,} = UseContext();
+    setOpenMenuUser,
+    openCart,
+    setOpenCart,} = UseContext();
 
   const OpenMenuUser = () =>{
     setOpenMenuUser(!openMenuUser)
@@ -61,8 +64,11 @@ function Header() {
       <li className="navbar-email">{login}</li>
       <li className="navbar-email">{infoUser}</li>
       <li className="navbar-shopping-cart">
-        <img src={icon_shopping_cart} alt="shopping cart" />
-        <div>2</div>
+        <button onClick={()=>{setOpenCart(!openCart)}}>
+          <img src={icon_shopping_cart} alt="shopping cart" />
+          <div className='navbar-shopping-cart-number'>2</div>
+        </button>
+        {openCart && (<ShoppingCart />)}
       </li>
     </ul>
   </div>

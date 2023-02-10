@@ -4,8 +4,9 @@ const context = React.createContext();
 const UseContext = () =>(useContext(context));
 
 function GlobalContext({children}) {
-    const[user,setUser] = useState('')
-    const[openMenuUser, setOpenMenuUser] = useState(false)
+    const[user,setUser] = useState('');
+    const[openMenuUser, setOpenMenuUser] = useState(false);
+    const[openCart, setOpenCart] = useState(false);
 
   return (
     <context.Provider value={{
@@ -13,6 +14,8 @@ function GlobalContext({children}) {
         setUser,
         openMenuUser,
         setOpenMenuUser,
+        openCart,
+        setOpenCart,
     }}>
         {children}
     </context.Provider>

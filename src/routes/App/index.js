@@ -8,6 +8,7 @@ import {RecoveryPassword} from '../../pages/RecoveryPassword'
 import { Home } from '../../pages/Home';
 import { NotFount } from '../../pages/NotFound';
 import { Create } from '../../pages/Create';
+import { MyOrder } from '../../pages/MyOrder';
 
 import '../../components/styles/global.css'
 
@@ -23,6 +24,7 @@ function App() {
           <Route exact path='/Sign-in' element={<Create />}/>
           <Route exact path='/recovery' element={<Recover />}/>
           <Route exact path='/recovery-password' element={<RecoveryPassword />}/>
+          <Route exact path='/myOrder' element={<MyOrder />}/>
           <Route element={<NotFount />}/>
 
       </Routes>

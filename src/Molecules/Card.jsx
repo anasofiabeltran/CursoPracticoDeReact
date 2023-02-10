@@ -15,6 +15,7 @@ function Card() {
             <img src="./icons/bt_add_to_cart.svg" alt="" />
             </figure>
         </div>
+       
     </div>
 
   )

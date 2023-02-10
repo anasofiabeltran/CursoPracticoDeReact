@@ -85,6 +85,10 @@
     position: relative;
   }
 
+  .button{
+    color: white !important;
+  }
+
   @media (max-width: 640px) {
     .product-detail {
       width: 100%;

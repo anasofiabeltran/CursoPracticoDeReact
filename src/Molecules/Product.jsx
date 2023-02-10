@@ -7,7 +7,7 @@ function Product() {
   return (
  
     <section className='Product'>
-        <aside className="product-detail">
+        <aside className="product-detail-product">
                 <div className="product-detail-close">
                     <img src="./icons/icon_close.png" alt="close" />
                 </div>

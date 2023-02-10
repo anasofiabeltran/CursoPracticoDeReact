@@ -1,6 +1,11 @@
 import React from 'react'
 
+import {GlobalContext,UseContext} from '../components/GlobalContext' 
+
 function Cart() {
+  const {openProduct,
+    setOpenProduct,} = UseContext();
+
   return (
     <section className="shopping-cart">
         <figure>
@@ -8,7 +13,7 @@ function Cart() {
         </figure>
         <p>Bike</p>
         <p>$30,00</p>
-        <img src="./icons/icon_close.png" alt="close" />
+        <img onClick={()=>{setOpenProduct(!openProduct)}} src="./icons/icon_close.png" alt="close" />
     </section>
 
   )

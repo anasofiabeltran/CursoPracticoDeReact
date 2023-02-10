@@ -7,6 +7,7 @@ function GlobalContext({children}) {
     const[user,setUser] = useState('');
     const[openMenuUser, setOpenMenuUser] = useState(false);
     const[openCart, setOpenCart] = useState(false);
+    const[openProduct,setOpenProduct] = useState(false);
 
   return (
     <context.Provider value={{
@@ -16,6 +17,8 @@ function GlobalContext({children}) {
         setOpenMenuUser,
         openCart,
         setOpenCart,
+        openProduct,
+        setOpenProduct,
     }}>
         {children}
     </context.Provider>

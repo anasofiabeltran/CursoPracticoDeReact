@@ -20,36 +20,34 @@ function Home() {
       <Search />
     <section className="main-container">
       <div className="cards-container">
-        <button onClick={()=>{setOpenProduct(!openProduct)}}>
-          <Card />
+        <button className='button-background' onClick={()=>{setOpenProduct(!openProduct)}}>
+          <Card  />
         </button>
-        <button onClick={()=>{setOpenProduct(!openProduct)}}>
-          <Card />
+        <button className='button-background' onClick={()=>{setOpenProduct(!openProduct)}}>
+          <Card  />
         </button>
-        <button onClick={()=>{setOpenProduct(!openProduct)}}>
-          <Card />
+        <button className='button-background' onClick={()=>{setOpenProduct(!openProduct)}}>
+          <Card  />
         </button>
-        <button onClick={()=>{setOpenProduct(!openProduct)}}>
-          <Card />
+        <button className='button-background' onClick={()=>{setOpenProduct(!openProduct)}}>
+          <Card  />
         </button>
-        <button onClick={()=>{setOpenProduct(!openProduct)}}>
-          <Card />
+        <button className='button-background' onClick={()=>{setOpenProduct(!openProduct)}}>
+          <Card  />
         </button>
-        <button onClick={()=>{setOpenProduct(!openProduct)}}>
-          <Card />
+        <button className='button-background' onClick={()=>{setOpenProduct(!openProduct)}}>
+          <Card  />
         </button>
-        <button onClick={()=>{setOpenProduct(!openProduct)}}>
-          <Card />
+        <button className='button-background' onClick={()=>{setOpenProduct(!openProduct)}}>
+          <Card  />
         </button>
-        <button onClick={()=>{setOpenProduct(!openProduct)}}>
-          <Card />
+        <button className='button-background' onClick={()=>{setOpenProduct(!openProduct)}}>
+          <Card  />
         </button>
-        <button onClick={()=>{setOpenProduct(!openProduct)}}>
-          <Card />
+        <button className='button-background' onClick={()=>{setOpenProduct(!openProduct)}}>
+          <Card  />
         </button>
-        <button onClick={()=>{setOpenProduct(!openProduct)}}>
-          <Card />
-        </button>
+
 
         {openProduct && (<Product />)}
         

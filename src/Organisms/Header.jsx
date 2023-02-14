@@ -9,6 +9,7 @@ import '../components/styles/header.scss'
 import {GlobalContext,UseContext} from '../components/GlobalContext' 
 import { Menu } from '../Molecules/Menu.jsx';
 import { ShoppingCart } from '../pages/ShoppingCart.jsx';
+import arrow from '../Assets/Icons/arrow.png'
 
 import path from '../Assets/Icons/Path.png'
 
@@ -35,7 +36,7 @@ function Header() {
   },[openMenuUser])
   return (
  <nav>
-  <img src="./icons/icon_menu.svg" alt="menu" className="menu" />
+  <img src={arrow} alt="menu" className="menu" />
   <div className="navbar-left">
     <img src={logo} alt="logo" className="logo" />
     <ul>
@@ -64,7 +65,7 @@ function Header() {
       <li className="navbar-email">{login}</li>
       <li className="navbar-email">{infoUser}</li>
       <li className="navbar-shopping-cart">
-        <button onClick={()=>{setOpenCart(!openCart)}}>
+        <button className='button-background' onClick={()=>{setOpenCart(!openCart)}}>
           <img src={icon_shopping_cart} alt="shopping cart" />
           <div className='navbar-shopping-cart-number'>2</div>
         </button>

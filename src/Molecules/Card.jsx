@@ -1,6 +1,7 @@
 import React from 'react'
 
 import '../components/styles/card.scss'
+import cart from '../Assets/Icons/bt_add_to_cart.png'
 
 function Card() {
   return (
@@ -12,7 +13,7 @@ function Card() {
             <p>Bike</p>
             </div>
             <figure>
-            <img src="./icons/bt_add_to_cart.svg" alt="" />
+            <img src={cart} alt="" />
             </figure>
         </div>
        

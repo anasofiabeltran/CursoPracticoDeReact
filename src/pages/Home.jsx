@@ -5,6 +5,8 @@ import {Header} from '../Organisms/Header'
 import { Search } from '../Molecules/Search'
 import { Product } from '../Molecules/Product'
 import {GlobalContext,UseContext} from '../components/GlobalContext' 
+import cart from '../Assets/Icons/bt_add_to_cart.png'
+import { useGetProducts } from '../hooks/useGetProducs'
 
 
 import '../components/styles/Home.scss'
@@ -13,6 +15,8 @@ function Home() {
 
   const {openProduct,
     setOpenProduct,} = UseContext();
+
+  const products = useGetProducts('https://api.escuelajs.co/api/v1/products?limit=100&offset=1')
   
   return (
     <>
@@ -20,33 +24,24 @@ function Home() {
       <Search />
     <section className="main-container">
       <div className="cards-container">
-        <button className='button-background' onClick={()=>{setOpenProduct(!openProduct)}}>
-          <Card  />
-        </button>
-        <button className='button-background' onClick={()=>{setOpenProduct(!openProduct)}}>
-          <Card  />
-        </button>
-        <button className='button-background' onClick={()=>{setOpenProduct(!openProduct)}}>
-          <Card  />
-        </button>
-        <button className='button-background' onClick={()=>{setOpenProduct(!openProduct)}}>
-          <Card  />
-        </button>
-        <button className='button-background' onClick={()=>{setOpenProduct(!openProduct)}}>
-          <Card  />
-        </button>
-        <button className='button-background' onClick={()=>{setOpenProduct(!openProduct)}}>
-          <Card  />
-        </button>
-        <button className='button-background' onClick={()=>{setOpenProduct(!openProduct)}}>
-          <Card  />
-        </button>
-        <button className='button-background' onClick={()=>{setOpenProduct(!openProduct)}}>
-          <Card  />
-        </button>
-        <button className='button-background' onClick={()=>{setOpenProduct(!openProduct)}}>
-          <Card  />
-        </button>
+        {products.map((p,index)=>
+          (<button key={p.id} className='button-background' onClick={()=>{setOpenProduct(!openProduct)}}>
+            
+            <Card >
+              <img src={p.images[0]}/>
+              <div className="product-info">
+              <div>
+                <p>{p.price} $</p>
+                <p>{p.description}</p>
+                </div>
+                <figure>
+                <img src={cart} alt="cart" />
+                </figure>
+              </div>
+            </Card>
+        </button>)
+        )}
+        
 
 
         {openProduct && (<Product />)}

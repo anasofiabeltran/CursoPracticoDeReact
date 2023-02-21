@@ -16,6 +16,15 @@ function Home() {
   const {openProduct,
     setOpenProduct,} = UseContext();
 
+
+  const [productSelected,setProductSelected] = useState([])
+  const selectAProduct = (product) => {
+    setOpenProduct(!openProduct)
+    setProductSelected(product)
+  }
+
+  
+
   const products = useGetProducts('https://api.escuelajs.co/api/v1/products?limit=100&offset=1')
   
   return (
@@ -25,7 +34,7 @@ function Home() {
     <section className="main-container">
       <div className="cards-container">
         {products.map((p,index)=>
-          (<button key={p.id} className='button-background' onClick={()=>{setOpenProduct(!openProduct)}}>
+          (<button key={p.id} className='button-background' onClick={(p)=>{selectAProduct(p)}}>
             
             <Card >
               <img src={p.images[0]}/>
@@ -44,7 +53,7 @@ function Home() {
         
 
 
-        {openProduct && (<Product />)}
+        {openProduct && (<Product product={productSelected}/>)}
         
       </div>
     </section>

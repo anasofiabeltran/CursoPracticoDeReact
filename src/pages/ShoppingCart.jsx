@@ -12,7 +12,7 @@ import arrow from '../Assets/Icons/arrow.png'
 function ShoppingCart() {
 
 const {
-        setOpenCart,} = UseContext();
+        setOpenCart,state} = UseContext();
   return (
     <div className='UserShoppingCart'>
         <section className='UserShoppingCart-cart'>
@@ -23,7 +23,9 @@ const {
                 </div>
             </aside>
             <MyOrderContent>
-                <Cart />
+                <Cart>
+                    {state.cart.map(p=>(p))}
+                </Cart>
             </MyOrderContent>
         </section>
         

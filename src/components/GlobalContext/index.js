@@ -1,5 +1,7 @@
 import React, {useContext, useState} from 'react';
 
+import {useInitialState} from '../../hooks/useInitialState'
+
 const context = React.createContext();
 const UseContext = () =>(useContext(context));
 
@@ -8,6 +10,8 @@ function GlobalContext({children}) {
     const[openMenuUser, setOpenMenuUser] = useState(false);
     const[openCart, setOpenCart] = useState(false);
     const[openProduct,setOpenProduct] = useState(false);
+
+    const {state, addToCart} = useInitialState();
 
   return (
     <context.Provider value={{
@@ -19,6 +23,8 @@ function GlobalContext({children}) {
         setOpenCart,
         openProduct,
         setOpenProduct,
+        state,
+        addToCart,
     }}>
         {children}
     </context.Provider>

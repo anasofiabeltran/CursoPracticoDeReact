@@ -17,10 +17,17 @@ function Home() {
     setOpenProduct,} = UseContext();
 
 
-  const [productSelected,setProductSelected] = useState([])
-  const selectAProduct = (product) => {
+  const [productSelected,setProductSelected] = useState({})
+  const selectAProduct = (product,imag,price,description,id) => {
+    console.log('product:',product)
     setOpenProduct(!openProduct)
-    setProductSelected(product)
+    const productselected = {
+      'imag':imag,
+      'price':price,
+      'description':description,
+      'id':id
+    }
+    setProductSelected(productselected)
   }
 
   
@@ -34,7 +41,7 @@ function Home() {
     <section className="main-container">
       <div className="cards-container">
         {products.map((p,index)=>
-          (<button key={p.id} className='button-background' onClick={(p)=>{selectAProduct(p)}}>
+          (<button key={p.id} className='button-background' onClick={()=>{selectAProduct(p,p.images[0],p.price,p.description,p.id)}}>
             
             <Card >
               <img src={p.images[0]}/>

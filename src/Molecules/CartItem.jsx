@@ -1,16 +1,31 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-import cart from '../Assets/Icons/bt_add_to_cart.png'
+import close from '../Assets/Icons/close.png'
+
+import {UseContext} from '../components/GlobalContext' 
 
 function CartItem(props) {
+
+  const {totalMyOrder,
+    setTotalMyOrder,
+    removeFromCart} = UseContext();
+
+
+  
+  useEffect(()=>{
+    setTotalMyOrder(totalMyOrder+props.price)
+  },[])
+
   return (
     <>
     <figure>
-        <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike" />
+        <img src={props.imag} alt="bike" />
     </figure>
-    <p>Bike</p>
-    <p>$30,00</p>
-    <img  src={cart} alt="buy" />
+    <p>{props.id}</p>
+    <p>{props.price}</p>
+    <button onClick={()=>removeFromCart(props.id)}>
+      <img  src={close} alt="buy" />
+    </button>
     </>
   )
 }

@@ -23,7 +23,8 @@ function Header() {
     openMenuUser,
     setOpenMenuUser,
     openCart,
-    setOpenCart,} = UseContext();
+    setOpenCart,
+    state,} = UseContext();
 
   const OpenMenuUser = () =>{
     setOpenMenuUser(!openMenuUser)
@@ -67,7 +68,7 @@ function Header() {
       <li className="navbar-shopping-cart">
         <button className='button-background' onClick={()=>{setOpenCart(!openCart)}}>
           <img src={icon_shopping_cart} alt="shopping cart" />
-          <div className='navbar-shopping-cart-number'>2</div>
+          {state.cart.length > 0 ? <div className='navbar-shopping-cart-number'> {state.cart.length}</div> : null}
         </button>
         {openCart && (<ShoppingCart />)}
       </li>

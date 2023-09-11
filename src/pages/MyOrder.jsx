@@ -4,8 +4,15 @@ import { MyOrderContent } from '../Organisms/MyOrderContent'
 import { Cart } from '../Molecules/Cart'
 import {Header} from '../Organisms/Header'
 
+import {UseContext} from '../components/GlobalContext'
+import sumTotal from '../hooks/useTotalCar.js'
+
+
 import '../components/styles/MyOrder.scss'
 function MyOrder() {
+
+    const {state,} = UseContext()
+
   return (
     <>
     <Header />
@@ -20,7 +27,7 @@ function MyOrder() {
                             <span>03.25.21</span>
                             <span>6 articles</span>
                         </p>
-                        <p>$560.00</p>
+                        <p>Total: {sumTotal(state)}</p>
                         </div>
                     </div>
             </div>

@@ -23,12 +23,12 @@ function Product(props) {
                 <div className="product-detail-close">
                     <img onClick={()=>{setOpenProduct(!openProduct)}} src={close} alt="close" />
                 </div>
-                <img src={props.product.target.src} alt="product image" />
+                <img src={props.product.imag} alt="product image" />
                 <div className="product-info-product">
-                    <p>$35,00</p>
-                    <p>Bike</p>
-                    <p>With its practical position, this bike also fulfills a decorative function, add your hall or workspace.</p>
-                    <button className="primary-button add-to-cart-button" onClick={()=>{buy(<CartItem />)}}>
+                    <p>{props.product.price}</p>
+                    <p>{props.product.id}</p>
+                    <p>{props.product.description}</p>
+                    <button className="primary-button add-to-cart-button" onClick={()=>{buy(<CartItem imag={props.product.imag} price={props.product.price}  id={props.product.id}/>)}}>
                     <img src={cart} alt="add to cart" />
                     Add to cart
                     </button>

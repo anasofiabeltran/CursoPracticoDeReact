@@ -12,8 +12,6 @@ function Card({children}) {
     
     <div className="product-card">
       {children}
-        
-       
     </div>
 
   )

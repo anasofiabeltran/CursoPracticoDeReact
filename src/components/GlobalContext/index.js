@@ -11,7 +11,9 @@ function GlobalContext({children}) {
     const[openCart, setOpenCart] = useState(false);
     const[openProduct,setOpenProduct] = useState(false);
 
-    const {state, addToCart} = useInitialState();
+    const {state, addToCart, removeFromCart} = useInitialState();
+
+    const [totalMyOrder, setTotalMyOrder]= useState(0)
 
   return (
     <context.Provider value={{
@@ -25,6 +27,9 @@ function GlobalContext({children}) {
         setOpenProduct,
         state,
         addToCart,
+        removeFromCart,
+        totalMyOrder,
+        setTotalMyOrder,
     }}>
         {children}
     </context.Provider>
